@@ -6,7 +6,11 @@ import Router from './route.js';
 import Connection from './DbConnection/Connection.js';
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://google-keeper-chi.vercel.app",
+  methods: ["POST", "GET", "DELETE"],
+  credentials: true
+}));
 app.use(bodyParser.json({extended: true}))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(session({
