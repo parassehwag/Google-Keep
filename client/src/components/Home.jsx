@@ -13,7 +13,7 @@ function Home() {
     useEffect(()=>{
           async function fetchNotes(){
             try{
-              let response = await axios.get(`http://localhost:8000/getNotes`,{
+              let response = await axios.get(`https://google-keep-kappa-gray.vercel.app/getNotes`,{
                 params: {username:username}
               })
               if(response.status===200){
@@ -33,7 +33,7 @@ function Home() {
     async function addNote(newNote) {
       try{
         console.log(username);
-        let response = await axios.post(`http://localhost:8000/addNote`,{newNote,username});
+        let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/addNote`,{newNote,username});
         if(response.status===200){
           console.log("note uploaded successfully")
         }
@@ -51,7 +51,7 @@ function Home() {
       });
 
       try{
-        let response = await axios.delete(`http://localhost:8000/deleteNote`,{
+        let response = await axios.delete(`https://google-keep-kappa-gray.vercel.app/deleteNote`,{
           params:{username:username,id:id}
         })
         if(response.status===200){

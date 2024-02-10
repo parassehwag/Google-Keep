@@ -32,7 +32,7 @@ const Login = ({setAuthStatus}) => {
 
     async function signUpUser(){
         try{
-            let response = await axios.post(`http://localhost:8000/singnUp`,signUp)
+            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/singnUp`,signUp)
             if(response.status===200){
                 console.log('signup Successful')
                 toggleRegistered();
@@ -60,7 +60,7 @@ const Login = ({setAuthStatus}) => {
 
     async function loginUser(){
         try{
-            let response = await axios.post(`http://localhost:8000/login`,login)
+            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/login`,login)
 
             if(response.status===200){
                 console.log('Login Success');
