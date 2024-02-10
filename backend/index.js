@@ -1,11 +1,11 @@
 import express from 'express';
 const app = express();
 import cors from "cors";
-app.use(cors({
-  origin: '*',
-  methods: ["POST", "GET", "DELETE"],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: '*',
+//   methods: ["POST", "GET", "DELETE"],
+//   credentials: true
+// }));
 
 import session from "express-session";
 import bodyParser from "body-parser";
