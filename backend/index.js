@@ -7,7 +7,7 @@ import Connection from './DbConnection/Connection.js';
 const app = express();
 
 app.use(cors({
-  origin: "https://google-keeper-chi.vercel.app",
+  origin: ["https://google-keeper-chi.vercel.app"],
   methods: ["POST", "GET", "DELETE"],
   credentials: true
 }));
