@@ -6,6 +6,9 @@ import {useNavigate} from "react-router-dom";
 
 
 const Login = ({setAuthStatus}) => {
+    var header = {
+        'Access-Control-Allow-Origin': '*'
+    };
     //
     const Navigate = useNavigate();
 
@@ -32,7 +35,9 @@ const Login = ({setAuthStatus}) => {
 
     async function signUpUser(){
         try{
-            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/singnUp`,signUp)
+            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/singnUp`,signUp,{
+                headers:header
+            })
             if(response.status===200){
                 console.log('signup Successful')
                 toggleRegistered();
@@ -60,7 +65,9 @@ const Login = ({setAuthStatus}) => {
 
     async function loginUser(){
         try{
-            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/login`,login)
+            let response = await axios.post(`https://google-keep-kappa-gray.vercel.app/login`,login,{
+                headers:header
+            })
 
             if(response.status===200){
                 console.log('Login Success');
